@@ -1,0 +1,61 @@
+<p-progressSpinner *ngIf="loading"></p-progressSpinner>
+<div>
+    <!--    <label for="origin" class="block text-900 text-xl font-medium mb-2">Origin</label>-->
+    <div class="flex flex-row justify-content-around" style="margin-bottom: 45px">
+
+
+        <app-airport-select #originAirport title="Departure" [airport]="origin" (airportSelect)="selectedOrigin($event)" > </app-airport-select>
+
+        <p-calendar id="newDepartureTime" [(ngModel)]="departureDate"  showIcon="true" [showTime]="false"
+                    dateFormat="m/d/yy " ></p-calendar>
+        <app-airport-select #destinationAirport title="Destination" [airport]="destination" (airportSelect)="selectedDestination($event)"></app-airport-select>
+        <p-calendar id="newDepartureTime" [(ngModel)]="returnDate" [showTime]="false"  showIcon="true"
+                    dateFormat="m/d/yy "  ></p-calendar>
+            <button pButton pRipple label="Search" class="p-3 text-lg mb-5 searchFlightsButton" (click)="load()"></button>
+    </div>
+
+
+    <!--    <p-listbox id="origin" [options]="airports" [(ngModel)]="origin" optionLabel="name" [filter]="true" [style]="{ width: '15rem' }" [listStyle]="{'max-height': '120px'}"></p-listbox>-->
+
+    <!--    <label for="email1" class="block text-900 text-xl font-medium mb-2">Email</label>-->
+    <!--    <input id="email1" type="text" [(ngModel)]="email" placeholder="Email address" pInputText-->
+    <!--           class="w-full  mb-5" style="padding:1rem">-->
+
+
+    <!--                    <div class="flex align-items-center justify-content-between mb-5 gap-5">-->
+    <!--                        <div class="flex align-items-center">-->
+    <!--                            <p-checkbox id="rememberme1" [binary]="true" styleClass="mr-2"></p-checkbox>-->
+    <!--                            <label for="rememberme1">Remember me</label>-->
+    <!--                        </div>-->
+    <!--                        <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(&#45;&#45;primary-color)">Forgot password?</a>-->
+    <!--                    </div>-->
+
+</div>
+
+
+<ul class="list-none p-0 m-0 itin">
+    <li class="flex flex-column md:flex-row md:align-items-center md:justify-content-between mb-4 p-card"
+        *ngFor="let offer of selectedOffers" style="padding: 10px;">
+        <div>
+            <img src="{{offer['owner']['logo_symbol_url']}}" height="50">
+            <div class="text-900 font-medium mr-2 mb-1 md:mb-0">{{offer['owner']['name']}}</div>
+            <div class="mt-1 text-600">{{offer['price']}} {{offer['currency']}}</div>
+        </div>
+        <div class="mt-2 md:mt-0  align-items-center">
+            <div *ngFor="let t of offer['trips']">
+                <div class="tripTitle">{{t['starts']}} -  {{t['duration']}}  {{t['stops']}} stops</div>
+                <div *ngFor="let s of t['segments']">
+                    <div style="text-align: right">
+                        <span class="flightNumber" *ngIf="s['flightMarketing'] != s['flightOperating']">{{s['flightMarketing']}} ({{s['flightOperating']}})</span>
+                        <span class="flightNumber" *ngIf="s['flightMarketing'] == s['flightOperating']">{{s['flightMarketing']}}</span>&nbsp;
+                        <span class="airportCode">{{s['origin']}}</span> {{s['depd']}} {{s['dept']}} &nbsp; &nbsp; <span
+                        class="airportCode">{{s['destination']}}</span> {{s['arrd']}} {{s['arrt']}} </div>
+                </div>
+            </div>
+            <button pButton pRipple label="Book" class="p-3 text-lg bookButton" (click)="book(offer)"></button>
+        </div>
+        <!--        <div class="flex flex-row">-->
+        <!--            -->
+        <!--        </div>-->
+    </li>
+</ul>

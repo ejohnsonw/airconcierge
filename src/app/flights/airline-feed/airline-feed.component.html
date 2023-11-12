@@ -1,0 +1,15 @@
+<!--{{segment['status'] == 'CANCELLED'}}-->
+<!--{{segment['status']}}  {{segment['flightNumber']}}-->
+<!--&lt;!&ndash;{{debug(segment)}}&ndash;&gt;-->
+<app-airline-rebook *ngIf="segment['status'] == 'CANCELLED'" [segment]="segment" [bookingId]="bookingId" [iataCode]="iataCode"></app-airline-rebook>
+<div *ngIf="feeds && feeds.length> 0">
+    <app-feed-tile [feed]="feed" *ngFor="let feed of feeds" ></app-feed-tile>
+</div>
+
+<div *ngIf="!feeds ||  feeds.length == 0" class="p-card card">
+    <div>No content to show</div>
+<img src="assets/layout/images/logo-grey.png" height="75">
+</div>
+
+
+

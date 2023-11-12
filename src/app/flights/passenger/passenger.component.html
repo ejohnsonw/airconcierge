@@ -1,0 +1,16 @@
+<div >
+    <h6 *ngIf="passenger">{{passenger['name']}} ({{passenger['email']}})</h6>
+    <app-bookings [bookings]="passenger['bookings']" *ngIf="passenger"></app-bookings>
+<!--    <p-tabView>-->
+<!--            <p-tabPanel header="Bookings">-->
+<!--                <app-bookings [bookings]="passenger['bookings']"></app-bookings>-->
+<!--            </p-tabPanel>-->
+<!--        <p-tabPanel header="Flights">-->
+<!--            <app-shop></app-shop>-->
+<!--        </p-tabPanel>-->
+
+<!--    </p-tabView>-->
+</div>
+
+
+

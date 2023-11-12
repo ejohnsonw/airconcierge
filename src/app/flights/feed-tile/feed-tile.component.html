@@ -1,0 +1,27 @@
+<div class="card p-card" >
+    <div *ngIf="feed['advertisement']">
+        <div>
+            <h3><img src="{{feed['advertisement']['bizLogo']}}" height="50"> {{feed['advertisement']['bizName']}}</h3>
+        </div>
+
+        <div class="p-card-title">
+            <img src="{{feed['advertisement']['image']}}" width="100%">
+        </div>
+        <div class="p-card-body">
+            <h4>{{feed['advertisement']['title']}}</h4>
+            <div [innerHTML]="feed['advertisement']['description']">
+
+            </div>
+
+        </div>
+        <div>Learn More <a href="{{feed['advertisement']['urlAction']}}">here</a></div>
+    </div>
+
+    <div *ngIf="!feed['advertisement']">
+        <div class="p-card-title">
+            {{feed['subject']}}
+        </div>
+        <div [innerHTML]="feed['content']"></div>
+    </div>
+
+</div>

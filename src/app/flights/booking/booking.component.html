@@ -1,0 +1,15 @@
+
+<!-- HTML -->
+<div id="chartdiv"></div>
+<div>*Click on a segment for more information</div>
+<app-booking-itinerary [bookingId]="booking['bookingId']" (segmentSelected)="segmentSelect($event)" (bookingRefreshed)="bookingData($event)" [detail]="true"></app-booking-itinerary>
+<div *ngIf="selectedSegment">
+    <div *ngFor="let t of booking['offer']['trips']">
+        <div *ngFor="let s of t['segments']">
+            <app-segment *ngIf="selectedSegment['flight'] == s['flight']" [segment]="s" [bookingId]="booking['bookingId']"></app-segment>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,9 @@
+
+<div *ngIf="feeds && feeds.length> 0">
+    <app-feed-tile [feed]="feed" *ngFor="let feed of feeds"></app-feed-tile>
+</div>
+
+<div *ngIf="!feeds ||  feeds.length == 0" class="p-card card">
+    <div>No content to show</div>
+    <img src="assets/layout/images/logo-grey.png" height="75">
+</div>

@@ -1,0 +1,20 @@
+<li class="flex flex-column md:flex-row md:align-items-center md:justify-content-between mb-4 p-card"
+    style="padding: 10px;">
+        <div class="flex flex-row">
+            <div class="">
+                <div class="mt-1 text-600">{{booking['uuid']}}</div>
+                <img src="{{offer['owner']['logo_symbol_url']}}" height="100">
+                <div class="text-900 font-medium mr-2 mb-1 md:mb-0">{{offer['owner']['name']}}</div>
+                <div class="mt-1 text-600">{{offer['price']}} {{offer['currency']}}</div>
+
+            </div>
+            <div class="mt-2 md:mt-0  align-items-end">
+                <div *ngFor="let t of offer['trips']">
+                    <div class="tripTitle">{{t['starts']}} -  {{t['duration']}}  {{t['stops']}} stops</div>
+                    <div *ngFor="let s of t['segments']">
+                        <div style="text-align: right"><span class="flightNumber">{{s['flightMarketing']}}</span>&nbsp;<span class="airportCode">{{s['origin']}}</span> {{s['depd']}} {{s['dept']}} &nbsp; &nbsp; <span class="airportCode">{{s['destination']}}</span> {{s['arrd']}} {{s['arrt']}} </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</li>

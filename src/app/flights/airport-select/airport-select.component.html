@@ -1,0 +1,14 @@
+<span class="p-float-label">
+    <p-autoComplete [(ngModel)]="airport" [dropdown]="true" [suggestions]="filteredAirports"
+                    (completeMethod)="filterAirports($event)" [forceSelection]="true" [virtualScroll]="false"
+                    field="name" inputId="float-label" (onSelect)="selectedAirport($event)">
+        <ng-template let-airport pTemplate="item">
+            <div class="flex align-items-center gap-2">
+                <div>{{ airport.name }} ({{ airport.code }})</div>
+            </div>
+        </ng-template>
+    </p-autoComplete>
+    <label for="float-label">{{title}}</label>
+</span>
+
+

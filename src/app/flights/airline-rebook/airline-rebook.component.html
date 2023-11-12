@@ -1,0 +1,19 @@
+<div class="card p-card" *ngIf="rebook && rebook['ahead'] > 0">
+    <div >
+        <div>
+            We reserved a spot on the queue for you.
+        </div>
+        <div>
+            <h3>There are {{rebook['ahead']}}  persons ahead   ({{rebook['total']}} passengers)</h3>
+        </div>
+
+    </div>
+
+</div>
+<div *ngIf="rebook && rebook['offers'] ">
+    <div>
+        <h3>We can rebook you in one of these flights</h3>
+    </div>
+    <app-offers [offers]="rebook['offers']"></app-offers>
+</div>
+

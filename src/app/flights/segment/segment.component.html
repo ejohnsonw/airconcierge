@@ -1,0 +1,20 @@
+
+<h3>Feed</h3>
+<!--<p-tabView>-->
+<!--    <p-tabPanel header="{{segment['marketingAirline']['name']}}">-->
+<!--        <app-airline-feed [iataCode]="segment['origin']"  [segment]="segment"  [bookingId]="bookingId"></app-airline-feed>-->
+<!--    </p-tabPanel>-->
+<!--    <p-tabPanel header="{{segment['DepartureAirport']['name']}}">-->
+<!--        <app-airport [iataCode]="segment['origin']"  [segment]="segment"  [bookingId]="bookingId"></app-airport>-->
+<!--    </p-tabPanel>-->
+<!--    <p-tabPanel header="{{segment['ArrivalAirport']['name']}}">-->
+<!--        <app-airport [iataCode]="segment['destination']" [segment]="segment" [bookingId]="bookingId"></app-airport>-->
+<!--    </p-tabPanel>-->
+<!--</p-tabView>-->
+
+<h4>Airline: {{segment['marketingAirline']['name']}}</h4>
+<app-airline-feed [iataCode]="segment['origin']"  [segment]="segment"  [bookingId]="bookingId"></app-airline-feed>
+<h4>Departure: {{segment['DepartureAirport']['name']}}</h4>
+<app-airport [iataCode]="segment['origin']"  [segment]="segment"  [bookingId]="bookingId"></app-airport>
+<h4>Destination: {{segment['ArrivalAirport']['name']}}</h4>
+<app-airport [iataCode]="segment['destination']" [segment]="segment" [bookingId]="bookingId"></app-airport>

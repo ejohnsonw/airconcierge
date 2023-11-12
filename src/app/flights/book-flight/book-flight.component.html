@@ -1,0 +1,32 @@
+<div>
+    <img src="{{offer['owner']['logo_symbol_url']}}" height="100">
+    <div class="text-900 font-medium mr-2 mb-1 md:mb-0">{{offer['owner']['name']}}</div>
+    <div class="mt-1 text-600">{{offer['price']}} {{offer['currency']}}</div>
+</div>
+<div class="mt-2 md:mt-0  align-items-center">
+    <div *ngFor="let t of offer['trips']">
+        <div class="tripTitle">{{t['starts']}} -  {{t['duration']}}  {{t['stops']}} stops</div>
+        <div *ngFor="let s of t['segments']">
+            <div style="text-align: right"><span class="flightNumber">{{s['flightMarketing']}}</span>&nbsp;<span class="airportCode">{{s['origin']}}</span> {{s['depd']}} {{s['dept']}} &nbsp; &nbsp; <span class="airportCode">{{s['destination']}}</span> {{s['arrd']}} {{s['arrt']}} </div>
+        </div>
+    </div>
+</div>
+<div>
+    <label for="name" class="block text-900 text-xl font-medium mb-2">Full Name</label>
+    <input id="name" [(ngModel)]="passenger['name']" type="text" placeholder="Passenger's name" pInputText
+           class="w-full  mb-5" style="padding:1rem" readonly>
+
+    <label for="email1" class="block text-900 text-xl font-medium mb-2">Email</label>
+    <input id="email1" type="text" [(ngModel)]="passenger['email']" placeholder="Email address" pInputText
+           class="w-full  mb-5" style="padding:1rem" readonly>
+
+
+    <!--                    <div class="flex align-items-center justify-content-between mb-5 gap-5">-->
+    <!--                        <div class="flex align-items-center">-->
+    <!--                            <p-checkbox id="rememberme1" [binary]="true" styleClass="mr-2"></p-checkbox>-->
+    <!--                            <label for="rememberme1">Remember me</label>-->
+    <!--                        </div>-->
+    <!--                        <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(&#45;&#45;primary-color)">Forgot password?</a>-->
+    <!--                    </div>-->
+    <button pButton pRipple label="Book" class="w-full p-3 text-lg mb-5" (click)="book()"></button>
+</div>

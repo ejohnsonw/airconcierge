@@ -1,0 +1,17 @@
+<ul class="list-none p-0 m-0 itin">
+    <li class="flex flex-column md:flex-row md:align-items-center md:justify-content-between mb-4 p-card card">
+        <div>
+            <img src="{{airline['logo']}}" height="75">
+        </div>
+    </li>
+    <li class="flex flex-column md:flex-row md:align-items-center md:justify-content-between mb-4 p-card card"
+        *ngFor="let flight of airline['flights']" style="padding: 10px;cursor:pointer"
+        (click)="selectedFlight(flight)">
+        <div class="flightNumber">{{flight['status']}}</div>
+        <div style="text-align: right">
+            <span class="flightNumber">{{flight['flightNumber']}}</span>&nbsp;
+            <span class="airportCode">{{flight['origin']}}</span> {{flight['departureDate']}} &nbsp; &nbsp;
+            <span class="airportCode">{{flight['destination']}}</span> {{flight['arrivalDate']}}
+        </div>
+    </li>
+</ul>
