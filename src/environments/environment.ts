@@ -6,13 +6,6 @@
 export const environment = {
   production: false,
   baseUrl : 'http://192.168.1.8:9010/',
-  baseUrlUI : 'http://localhost:4200/~~',
-  baseUrlBiz : 'http://localhost:7031/',
-  baseUrlEvents : 'http://localhost:5401',
-  websocket : 'ws://localhost:9087/',
-  hostname : 'http://localhost:5402/',
-  baseUrlSecurity : 'http://localhost:8045',
-  publishableKey: 'pk_test_eUZwms0G01NxhK7rwjKDrWOQ'
 };
 
 // export const environment = {

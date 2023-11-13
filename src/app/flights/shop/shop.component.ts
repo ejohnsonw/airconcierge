@@ -4,6 +4,7 @@ import {DialogService, DynamicDialogRef} from "primeng/dynamicdialog";
 import * as moment from 'moment';
 import {BookFlightComponent} from "../book-flight/book-flight.component";
 import {Router} from "@angular/router";
+import {LayoutService} from "../../layout/service/app.layout.service";
 
 @Component({
     selector: 'app-shop',
@@ -24,7 +25,7 @@ export class ShopComponent implements OnInit {
     departureDate: any;
     returnDate: any;
 
-    constructor(private webservice: WebserviceService, public dialogService: DialogService, private router:Router) {
+    constructor(public layoutService:LayoutService, private webservice: WebserviceService, public dialogService: DialogService, private router:Router) {
 
     }
 

@@ -3,6 +3,7 @@ import {BookFlightComponent} from "../book-flight/book-flight.component";
 import {WebserviceService} from "../../webservice.service";
 import {DialogService, DynamicDialogRef} from "primeng/dynamicdialog";
 import {Router} from "@angular/router";
+import {LayoutService} from "../../layout/service/app.layout.service";
 
 @Component({
   selector: 'app-offers',
@@ -13,7 +14,7 @@ export class OffersComponent {
     @Input() offers;
     private ref: DynamicDialogRef;
 
-    constructor(private webservice: WebserviceService, public dialogService: DialogService, private router:Router) {
+    constructor(public layoutService:LayoutService, private webservice: WebserviceService, public dialogService: DialogService, private router:Router) {
 
     }
 

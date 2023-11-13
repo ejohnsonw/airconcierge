@@ -2,7 +2,8 @@
 <ul class="list-none p-0 m-0 itin">
     <li class="flex flex-column md:flex-row md:align-items-center md:justify-content-between mb-4 p-card card">
         <div>
-            <img src="{{airline['logo']}}" height="75">
+            <img src="{{airline['logo']}}" height="50" *ngIf="layoutService.state.displayLogos">
+            <img src="assets/layout/images/logo-grey.png" height="50" *ngIf="!layoutService.state.displayLogos">
         </div>
     </li>
     <li class="flex flex-column md:flex-row md:align-items-center md:justify-content-between mb-4"

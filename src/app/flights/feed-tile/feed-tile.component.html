@@ -14,6 +14,7 @@
             </div>
 
         </div>
+        <app-hotel-quiz *ngIf="feed['advertisement']['title'].includes('Hotel')"></app-hotel-quiz>
         <div>Learn More <a href="{{feed['advertisement']['urlAction']}}">here</a></div>
     </div>
 

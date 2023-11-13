@@ -1,5 +1,6 @@
 <div>
-    <img src="{{offer['owner']['logo_symbol_url']}}" height="100">
+    <img src="{{offer['owner']['logo_symbol_url']}}" height="50" *ngIf="layoutService.state.displayLogos">
+    <img src="assets/layout/images/logo-grey.png" height="50" *ngIf="!layoutService.state.displayLogos">
     <div class="text-900 font-medium mr-2 mb-1 md:mb-0">{{offer['owner']['name']}}</div>
     <div class="mt-1 text-600">{{offer['price']}} {{offer['currency']}}</div>
 </div>

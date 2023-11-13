@@ -16,6 +16,7 @@ interface LayoutState {
     profileSidebarVisible: boolean;
     configSidebarVisible: boolean;
     staticMenuMobileActive: boolean;
+    displayLogos: boolean;
     menuHoverActive: boolean;
 }
 
@@ -39,6 +40,7 @@ export class LayoutService {
         profileSidebarVisible: false,
         configSidebarVisible: false,
         staticMenuMobileActive: false,
+        displayLogos: false,
         menuHoverActive: false
     };
 

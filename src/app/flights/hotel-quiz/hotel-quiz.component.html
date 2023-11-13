@@ -1,0 +1,69 @@
+<div class="card p-card">
+    <div>
+        <div>
+            <h3>Room temperature: {{value}}</h3>
+        </div>
+
+
+        <div class="p-card-title" style="padding-left: 30px;padding-right: 30px">
+            <p-slider [(ngModel)]="value" aria-valuemin="68" aria-valuemax="80"></p-slider>
+        </div>
+
+        <div style="margin-top: 25px">
+            <div>
+                <h3>Services</h3>
+            </div>
+
+            <div class="flex flex-row justify-content-start">
+                <div class="flex align-items-center gap-1">
+                    <p-checkbox name="group1" value="Early Check in" [(ngModel)]="selectedCities"
+                                inputId="ny"></p-checkbox>
+                    <label for="ny">Early Check-in</label>
+                </div>
+
+            </div>
+        </div>
+
+        <div style="margin-top: 25px">
+            <div>
+                <h3>Beverages</h3>
+            </div>
+
+            <div class="flex flex-row justify-content-around">
+                <div class="flex align-items-center gap-1">
+                    <p-checkbox name="group1" value="Bottled Water" [(ngModel)]="selectedCities"
+                                inputId="ny"></p-checkbox>
+                    <label for="ny">Bottled water</label>
+                </div>
+
+                <div class="flex align-items-center gap-1">
+                    <p-checkbox name="group1" value="Coffee" [(ngModel)]="selectedCities" inputId="sf"></p-checkbox>
+                    <label for="sf">Coffee</label>
+                </div>
+
+                <div class="flex align-items-center gap-1">
+                    <p-checkbox name="group1" value="Tea" [(ngModel)]="selectedCities" inputId="tea"></p-checkbox>
+                    <label for="tea">Tea</label>
+                </div>
+
+                <div class="flex align-items-center gap-1">
+                    <p-checkbox name="group1" value="Fruit" [(ngModel)]="selectedCities" inputId="la"></p-checkbox>
+                    <label for="la">Fruit</label>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 25px">
+            <div>
+                <h3>Anything else we can do for you</h3>
+            </div>
+            <div class="flex align-items-center gap-1">
+
+                <textarea rows="5" pInputTextarea [(ngModel)]="notes" class="w-full" (focus)="setText()"></textarea>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+

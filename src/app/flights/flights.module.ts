@@ -30,6 +30,9 @@ import { AirlineFeedComponent } from './airline-feed/airline-feed.component';
 import { AirlineRebookComponent } from './airline-rebook/airline-rebook.component';
 import { OffersComponent } from './offers/offers.component';
 import { BookingItineraryComponent } from './booking-itinerary/booking-itinerary.component';
+import { HotelQuizComponent } from './hotel-quiz/hotel-quiz.component';
+import {SliderModule} from "primeng/slider";
+import {CheckboxModule} from "primeng/checkbox";
 
 
 
@@ -49,7 +52,8 @@ import { BookingItineraryComponent } from './booking-itinerary/booking-itinerary
     AirlineFeedComponent,
     AirlineRebookComponent,
     OffersComponent,
-    BookingItineraryComponent
+    BookingItineraryComponent,
+    HotelQuizComponent
   ],
     imports: [
         CommonModule,
@@ -67,7 +71,9 @@ import { BookingItineraryComponent } from './booking-itinerary/booking-itinerary
         TabViewModule,
         AutoCompleteModule,
         ListboxModule,
-        CalendarModule
+        CalendarModule,
+        SliderModule,
+        CheckboxModule
     ]
 })
 export class FlightsModule { }

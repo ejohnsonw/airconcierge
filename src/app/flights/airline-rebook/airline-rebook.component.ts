@@ -56,7 +56,7 @@ export class AirlineRebookComponent {
     }
     ngOnInit(): void {
         this.loadFeed()
-        this.bookingInterval = setInterval(this.loadFeed.bind(this),5000)
-        this.queueInterval = setInterval(this.updateQueue.bind(this),13000)
+        this.bookingInterval = setInterval(this.loadFeed.bind(this),3000)
+        this.queueInterval = setInterval(this.updateQueue.bind(this),5000)
     }
 }
